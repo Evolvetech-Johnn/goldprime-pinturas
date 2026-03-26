@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-gold: #C9A227;
+  --color-gold-light: #E5C35D;
+  --color-gold-dark: #A6801C;
+  --color-black-rich: #111111;
+  --color-off-white: #F8F6F1;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+    color-scheme: light dark;
+    background-color: var(--color-off-white);
+    color: var(--color-black-rich);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+/* Custom UI Utilities */
+@layer components {
+  .btn-premium {
+    @apply relative overflow-hidden transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+}
